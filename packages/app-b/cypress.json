@@ -5,6 +5,6 @@
   "env": {
     "grepFilterSpecs": true,
     "grepOmitFiltered": true,
-    "URL_TEST": "https://www.yahoo.com"
+    "URL_TEST": "https://www.example.com"
   }
 }
