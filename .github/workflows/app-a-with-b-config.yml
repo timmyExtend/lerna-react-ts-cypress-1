@@ -60,6 +60,7 @@ jobs:
           wait-on: 'http://localhost:3000'
           project: ./packages/app-a
           browser: chrome
+          config-file: ../app-b/cypress/cypress.json
           record: false
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
