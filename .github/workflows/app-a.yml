@@ -27,6 +27,10 @@ jobs:
       filesChanged: ${{ steps.changes.outputs.src }}
 
   test:
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [2]
     runs-on: ubuntu-20.04
     needs: [files-changed]
     if: needs.files-changed.outputs.filesChanged == 'true'
@@ -59,8 +63,4 @@ jobs:
           start: yarn start:a
           wait-on: 'http://localhost:3000'
           project: ./packages/app-a
-          parallelization: 3
           browser: chrome
-          record: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
