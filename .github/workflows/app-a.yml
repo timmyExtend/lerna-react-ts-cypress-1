@@ -65,5 +65,6 @@ jobs:
           project: ./packages/app-a
           browser: chrome
           record: true
+          parallel: true # parallelizes tests
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
