@@ -30,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [2]
+        containers: [3]
     runs-on: ubuntu-20.04
     needs: [files-changed]
     if: needs.files-changed.outputs.filesChanged == 'true'
