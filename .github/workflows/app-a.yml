@@ -30,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [3]
+        containers: [2]
     runs-on: ubuntu-20.04
     needs: [files-changed]
     if: needs.files-changed.outputs.filesChanged == 'true'
@@ -64,3 +64,6 @@ jobs:
           wait-on: 'http://localhost:3000'
           project: ./packages/app-a
           browser: chrome
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
