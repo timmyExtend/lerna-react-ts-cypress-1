@@ -59,6 +59,7 @@ jobs:
           start: yarn start:a
           wait-on: 'http://localhost:3000'
           project: ./packages/app-a
+          parallelization: 3
           browser: chrome
           record: true
         env:
